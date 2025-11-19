@@ -18,38 +18,62 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     let winner = "none";
 
-    if (humanChoice === "rock" && computerChoice === "scissors") {
-        print("You win! Rock beat scissors.");
-        winner = "human";
-    } else {
-        print("You lose! Paper beat rock");
-        winner = "computer";
+    if (humanChoice === "rock") {
+        if (computerChoice === "scissors") {
+            alert("You win! Rock beat scissors.");
+            winner = "human";
+        } else {
+            alert("You lose! Paper beat rock");
+            winner = "computer";
+        }
     }
 
-    if (humanChoice === "paper" && computerChoice === "rock") {
-        print("You win! Paper beat rock.");
-        winner = "human";
-    } else {
-        print("You lose! Scissor beat paper.");
-        winner = "computer";
+    if (humanChoice === "paper") {
+        if (computerChoice === "rock") {
+            alert("You win! Paper beat rock.");
+            winner = "human";
+        } else {
+            alert("You lose! Scissor beat paper.");
+            winner = "computer";
+        } 
     }
 
-    if (humanChoice === "scissors" && computerChoice === "paper") {
-        print("You win! Scissors beat paper.");
-        winner = "human";
-    } else {
-        print("You lose! Rock beat scissors.");
-        winner = "computer";
+    if (humanChoice === "scissors") {
+        if (computerChoice === "paper") {
+            alert("You win! Scissors beat paper.");
+            winner = "human";
+        } else {
+            alert("You lose! Rock beat scissors.");
+            winner = "computer";
+        }
     }
+
 
     return winner;
 
 }
 
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
 
-let humanScore = 0;
-let computerScore = 0;
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
+    for (let i = 0; i < 5; i++) {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
 
-let winner = playRound(humanChoice, computerChoice);
+        let winner = playRound(humanChoice, computerChoice);
+
+        if (winner === "human") {
+            humanScore++;
+        } else {
+            computerScore++;
+        }
+    }
+
+    let winnerMessage = humanScore > computerScore ? "You won the game!" : "You lost the game!"
+
+    alert(`${winnerMessage} Your points: ${humanScore} Computer points: ${computerScore}`);
+}
+
+
+playGame();
