@@ -1,8 +1,3 @@
-
-let humanScore = 0;
-let computerScore = 0;
-
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 10) + 1;
 
@@ -42,3 +37,8 @@ function playRound(humanChoice, computerChoice) {
 
 
 }
+
+
+let humanScore = 0;
+let computerScore = 0;
+
