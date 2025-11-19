@@ -1,4 +1,8 @@
 
+let humanScore = 0;
+let computerScore = 0;
+
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 10) + 1;
 
@@ -11,4 +15,8 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let playerChoice = prompt("Choose rock, paper or scissors:")
+    
+}
+
