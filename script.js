@@ -67,7 +67,10 @@ function playGame(playerChoice) {
     const roundsLimit = 5;
     let humanChoice = playerChoice;
     let computerChoice = getComputerChoice();
-    let resultsDiv = document.querySelector(".results-div");
+
+    if (resultsDiv.lastChild.id === "results") {
+        resultsDiv.removeChild(resultsDiv.lastChild);
+    }
 
     let winner = playRound(humanChoice, computerChoice);
 
@@ -85,11 +88,17 @@ function playGame(playerChoice) {
             resultsDiv.removeChild(resultsDiv.firstChild);
         }
 
+        resultsDiv.appendChild(showScorePara);
+
         // Create end message
 
         let para = document.createElement("p");
 
-        let winnerMessage = humanScore > computerScore ? "You won the game!" : "You lost the game!"
+        para.id = "results";
+
+        let winnerMessage = humanScore > computerScore ? "You won the game!" : "You lost the game!";
+
+        para.style.color = humanScore > computerScore ? "green" : "red";
 
         para.textContent = `${winnerMessage} Your points: ${humanScore} Computer points: ${computerScore}`;
         
@@ -101,16 +110,25 @@ function playGame(playerChoice) {
         currentRound = 0;
     }
 
+    showScorePara.textContent = `Your points: ${humanScore} Computer points: ${computerScore}`;
+
 }
 
 
 const rockButton = document.querySelector(".button-rock");
 const paperButton = document.querySelector(".button-paper");
 const scissorsButton = document.querySelector(".button-scissors");
+let resultsDiv = document.querySelector(".results-div");
+
+let showScorePara = document.createElement("p");
 
 let humanScore = 0;
 let computerScore = 0;
 let currentRound = 0;
+
+showScorePara.textContent = `Your points: ${humanScore} Computer points: ${computerScore}`
+
+resultsDiv.appendChild(showScorePara);
 
 rockButton.addEventListener('click', () => playGame("rock"));
 
