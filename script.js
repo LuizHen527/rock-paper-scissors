@@ -16,37 +16,48 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     let winner = "none";
+    let message = "";
+    let para = document.createElement("p");
+    let resultsDiv = document.querySelector(".results-div");
 
     if (humanChoice === "rock") {
         if (computerChoice === "scissors") {
-            alert("You win! Rock beat scissors.");
+            message = "You win! Rock beat scissors.";
             winner = "human";
+
         } else {
-            alert("You lose! Paper beat rock");
+            message = "You lose! Paper beat rock";
             winner = "computer";
+
         }
     }
 
     if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            alert("You win! Paper beat rock.");
+            message = "You win! Paper beat rock.";
             winner = "human";
+
         } else {
-            alert("You lose! Scissor beat paper.");
+            message = "You lose! Scissor beat paper.";
             winner = "computer";
+
         } 
     }
 
     if (humanChoice === "scissors") {
         if (computerChoice === "paper") {
-            alert("You win! Scissors beat paper.");
+            message = "You win! Scissors beat paper.";
             winner = "human";
+
         } else {
-            alert("You lose! Rock beat scissors.");
+            message = "You lose! Rock beat scissors.";
             winner = "computer";
+
         }
     }
 
+    para.textContent = message;
+    resultsDiv.appendChild(para);
 
     return winner;
 
