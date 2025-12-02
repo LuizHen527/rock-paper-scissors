@@ -22,11 +22,11 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "rock") {
         if (computerChoice === "scissors") {
-            message = "You win! Rock beat scissors.";
+            message = "You win! You: Rock; Computer: Scissors.";
             winner = "human";
 
         } else {
-            message = "You lose! Paper beat rock";
+            message = "You lose! You: Rock; Computer: Paper.";
             winner = "computer";
 
         }
@@ -34,11 +34,11 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            message = "You win! Paper beat rock.";
+            message = "You win! You: Paper; Computer: Rock.";
             winner = "human";
 
         } else {
-            message = "You lose! Scissor beat paper.";
+            message = "You lose! You: Paper; Computer: Scissor.";
             winner = "computer";
 
         } 
@@ -46,11 +46,11 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "scissors") {
         if (computerChoice === "paper") {
-            message = "You win! Scissors beat paper.";
+            message = "You win! You: Scissors; Computer: Paper.";
             winner = "human";
 
         } else {
-            message = "You lose! Rock beat scissors.";
+            message = "You lose! You: Scissors; Computer: Rock.";
             winner = "computer";
 
         }
