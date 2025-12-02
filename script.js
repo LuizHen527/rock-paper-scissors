@@ -99,19 +99,6 @@ function playGame(playerChoice) {
         humanScore = 0;
         computerScore = 0;
         currentRound = 0;
-    } else {
-        // Delete old paragraphs
-        while (resultsDiv.firstChild) {
-            resultsDiv.removeChild(resultsDiv.firstChild);
-        }
-
-        // Create running score message
-
-        let para = document.createElement("p");
-
-        para.textContent = `Your points: ${humanScore} Computer points: ${computerScore}`;
-        
-        resultsDiv.appendChild(para);
     }
 
 }
